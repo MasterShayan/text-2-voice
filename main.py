@@ -1,8 +1,7 @@
-import asyncio
 from datetime import datetime
 from io import BytesIO
 
-import httpx
+from httpx import AsyncClient
 from codern import api
 from fastapi import FastAPI, HTTPException, Path
 from starlette.responses import StreamingResponse
@@ -12,7 +11,7 @@ from utils import *
 app = FastAPI()
 
 async def download_audio(download_link: str) -> BytesIO:
-    async with httpx.AsyncClient() as client:
+    async with AsyncClient() as client:
         response = await client.get(download_link)
         response.raise_for_status()
         return BytesIO(response.content)
