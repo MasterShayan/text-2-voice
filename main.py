@@ -5,9 +5,8 @@ from starlette.responses import StreamingResponse
 import httpx
 from io import BytesIO
 from codern import api
-import logging
 
-logger = logging.getLogger(__name__)
+from utils import *
 
 app = FastAPI()
 
