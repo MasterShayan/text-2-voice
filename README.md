@@ -31,6 +31,11 @@ An API for converting text to voice.
     uvicorn main:app --reload --log-config logging_config.json
     ```
 
+    Or without logging config:
+    ```bash
+    uvicorn main:app --reload
+    ```
+
     Or using `python3`:
     ```bash
     python3 main.py
