@@ -31,5 +31,9 @@ async def create_voice(input_text: str = Path(..., description="متن صدا"))
         raise HTTPException(status_code=500, detail="خطایی در تولید صدا رخ داده است.")
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    
+    __import__("uvicorn").run(
+        app, 
+        host=settings.HOST, 
+        port=settings.PORT
+    )
