@@ -28,7 +28,7 @@ An API for converting text to voice.
 
 5. Run the server using `uvicorn`:
     ```bash
-    uvicorn main:app --reload
+    uvicorn main:app --reload --log-config logging_config.json
     ```
 
     Or using `python3`:
